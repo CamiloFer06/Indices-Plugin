@@ -152,7 +152,7 @@ export default class Indice extends Plugin {
 
 			const index = await this.createIndex(fold, 0, note);
 
-			const regex = /(<!-- inicio índice -->)([\s\S]*?)(<!-- inicio índice -->)/;
+			const regex = /(<!-- inicio índice -->)([\s\S]*?)(<!-- fin índice -->)/;
 			const match = content.match(regex);
 
 			if (match) {
@@ -163,7 +163,7 @@ export default class Indice extends Plugin {
 
 				editor.replaceRange(text, startPos, endPos);
 			} else {
-				const text = `\n<!-- inicio índice -->\n#indice\n\n${index}\n<!-- inicio índice -->\n`
+				const text = `\n<!-- inicio índice -->\n#indice\n\n${index}\n<!-- fin índice -->\n`
 
 				editor.replaceRange(text, editor.getCursor())
 			}
@@ -192,7 +192,7 @@ export default class Indice extends Plugin {
 			const content = await this.app.vault.read(note);
 
 			//busco el lugar del indice
-			const regex = /(<!-- inicio índice -->)([\s\S]*?)(<!-- inicio índice -->)/;
+			const regex = /(<!-- inicio índice -->)([\s\S]*?)(<!-- fin índice -->)/;
 
 			// rescribo el indice
 			const newContent = content.replace(regex, `$1\n#indice\n\n${index}\n$3`);
