@@ -1,0 +1,11 @@
+{
+	"id": "indice-plugin",
+	"name": "Indice Plugin",
+	"version": "1.0.1",
+	"minAppVersion": "0.15.0",
+	"description": "crea un indice de la carpeta",
+	"author": "El Peluca",
+	"authorUrl": "https://youtube.com/@elsextokage8818?si=OuvwDSsf_ZJzAeM_",
+	"fundingUrl": "https://youtube.com/@elsextokage8818?si=OuvwDSsf_ZJzAeM_",
+	"isDesktopOnly": false
+}
