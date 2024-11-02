@@ -8,7 +8,7 @@ export default class Indice extends Plugin {
 		this.addCommand({
 			id: 'crear-indice',
 			name: 'Crear Indice',
-			hotkeys: [{ modifiers: ['Mod', 'Shift'], key: 't' }],
+			hotkeys: [{ modifiers: ['Mod'], key: 'u' }],
 			editorCheckCallback: (checking: boolean) => {
 				const note = this.app.workspace.getActiveFile();
 
@@ -46,7 +46,7 @@ export default class Indice extends Plugin {
 		this.addCommand({
 			id: 'actualizar-todo',
 			name: 'Actualizar Todo',
-			hotkeys: [{ modifiers: ['Mod'], key: 'u' }],
+			hotkeys: [{ modifiers: ['Mod', 'Shift'], key: 'u' }],
 			callback: async () => {
 				await this.updateAll();
 				new Notice('Indices Actualizados');
